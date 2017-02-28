@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
     <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script src="angular-1.5.5/angular.min.js"></script>
     <script src="angular-1.5.5/angular-route.min.js"></script>
@@ -14,42 +15,44 @@
     <title>Leo</title>
 </head>
 <body ng-app="persoanlApp">
-<div id="loading"></div>
-<div class="window_container container" ng-controller="windowController">
-    <div class="row">
-        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4 shortcut" ng-repeat="short in shortcuts">
+<div id="loading" ng-controller="loadingController">
+    <p>Welcome, this is Leo :)</p>
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<div class="window_container container" ng-controller="windowController" >
+    <div class="row" ng-cloak="">
+        <div class="col-lg-1 col-md-3 col-sm-4 col-xs-6 shortcut" ng-repeat="short in shortcuts">
             <div class="shortcut_hover" title="double click to open">
                 <img src="{{short.imgUrl}}" ng-dblclick="shortcut_active($event)">
                 <span>{{short.text}}</span>
             </div>
         </div>
     </div>
-    <div class="window_modal col-lg-4 col-md-6 col-sm-10 col-xs-11" ng-show="modal_show">
-        <div class="modal-header">
-            <div class="pull-right">
+    <div id="modal_command" class="window_modal col-lg-4 col-md-6 col-sm-10 col-xs-11 ui-widget-content" ng-show="modal_show" ng-cloak="">
+        <div class="modal-header ui-widget-header">
+            <div class="pull-right" ng-click="close_modal($event)">
                 <i class="fa fa-times"></i>
             </div>
-            <div class="pull-right">
+            <div class="pull-right" ng-click="max_modal($event)">
                 <i class="fa fa-window-maximize"></i>
             </div>
-            <div class="pull-right">
+            <div class="pull-right" ng-click="min_modal($event)">
                 <i class="fa fa-window-minimize"></i>
             </div>
         </div>
         <div class="modal-body" id="modal-body">
-            <ul>
-                <li ng-repeat="item in $ctrl.items">
-                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
+
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+
         </div>
     </div>
 </div>
-<div id="start_menu">
+<div id="start_menu" ng-cloak="">
     <div class="start_menu_container">
         <div class="start_menu_tools">
             <i class="fa fa-user fa-md"></i>
@@ -58,7 +61,7 @@
         </div>
     </div>
 </div>
-<footer class="windows_bar" ng-controller="barController">
+<footer class="windows_bar" ng-controller="barController" ng-cloak="">
     <div title="Start" class="windows_button pull-left" data-toggle="tooltip" data-placement="top" id="start">
         <i class="fa fa-windows fa-lg"></i>
     </div>

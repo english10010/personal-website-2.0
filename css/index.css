@@ -28,6 +28,59 @@ body{
     z-index: 10;
 }
 
+#loading>p{
+    width: 400px;
+    color: deepskyblue;
+    margin: 30% 50% 0;
+    text-align: center;
+    font-size: 2em;
+    transform: translateX(-200px);
+}
+
+.spinner {
+    margin: 20px 50%;
+    width: 150px;
+    text-align: center;
+    transform: translateX(-75px);
+}
+
+.spinner > div {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 40% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}
+
 .window_container{
     width: 100%;
     height: 200px;
@@ -134,6 +187,10 @@ body{
     background: white;
     border: 5px;
     padding: 0;
+}
+
+#modal_command{
+
 }
 
 .bar_time{

@@ -1,5 +1,12 @@
 var app = angular.module('persoanlApp',[]);
 
+app.controller('loadingController', ['$scope', function ($scope) {
+    $scope.$watch('$viewContentLoaded', function(){
+        $('#loading').fadeOut();
+        $( "#modal_command").draggable({ handle: ".modal-header" });
+    });
+}]);
+
 app.controller('windowController', ['$scope', function ($scope) {
     $scope.shortcuts = [
         {'imgUrl':'images/coding.png', 'text':'Command'},
@@ -11,6 +18,18 @@ app.controller('windowController', ['$scope', function ($scope) {
     ];
     $scope.shortcut_active = function ($event) {
         $scope.modal_show = true;
+    };
+    $scope.min_modal = function ($event) {
+
+    };
+    $scope.max_modal = function ($event) {
+
+    };
+    $scope.close_modal = function ($event) {
+        $event.stopPropagation();
+        var $modal = jQuery($event.target).parents('#modal_command');
+        $scope.modal_show = false;
+        $modal.css({"top":0, "left":0});
     };
 }]);
 
