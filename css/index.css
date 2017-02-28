@@ -1,7 +1,31 @@
 body{
-    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background: url("../images/bg.jpg") repeat;
     font-size: 16px;
     position: relative;
+}
+
+.fa-lg{
+    font-size: 2em;
+}
+
+.fa-md{
+    font-size: 1.5em;
+}
+
+.fa{
+    line-height: 50px;
+    color: white;
+    transition: all .5s;
+}
+
+#loading{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background: #2f2f2f;
+    z-index: 10;
 }
 
 .window_container{
@@ -70,20 +94,6 @@ body{
     color: dodgerblue;
 }
 
-.fa-lg{
-    font-size: 2em;
-}
-
-.fa-md{
-    font-size: 1.5em;
-}
-
-.fa{
-    line-height: 50px;
-    color: white;
-    transition: all .5s;
-}
-
 .text-white{
     color: white;
 }
@@ -97,6 +107,33 @@ body{
     background: rgba(60, 60, 60, 0.89);
     color: white;
     padding-bottom: 10px;
+    padding-left: 10px;
+}
+.modal-header{
+    height: 40px;
+    padding: 0;
+    background: #2f2f2f;
+}
+
+.modal-header>div{
+    width: 30px;
+    height: 100%;
+    text-align: center;
+}
+
+.modal-header>div:hover{
+    background: rgba(0,0,0,.2);
+}
+
+.modal-header .fa{
+    line-height: 40px;
+}
+
+.window_modal{
+    height: 400px;
+    background: white;
+    border: 5px;
+    padding: 0;
 }
 
 .bar_time{

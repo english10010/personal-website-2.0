@@ -1,3 +1,9 @@
+var $loading = $('#loading');
+$loading.height($(window).height());
+setTimeout(function () {
+    $loading.fadeOut();
+}, 3000);
+
 $('[data-toggle="tooltip"]').tooltip();
 
 $('#start').on("click", function () {
