@@ -1,0 +1,112 @@
+body{
+    background-image: url("../images/bg.jpg");
+    font-size: 16px;
+    position: relative;
+}
+
+.window_container{
+    width: 100%;
+    height: 200px;
+}
+
+.shortcut{
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+.shortcut_hover{
+    width: 100px;
+    height: 90px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+.shortcut_hover.active, .shortcut_hover:hover{
+    background: rgba(255,255,255,.2);
+    border: solid 1px rgba(255,255,255,.4);
+}
+
+.shortcut span{
+    color: white;
+    display: block;
+}
+
+#start_menu{
+    position: fixed;
+    width: 250px;
+    height: 500px;
+    bottom: 50px;
+    left: 0;
+    background-color: #2f2f2f;
+    display: none;
+}
+
+.start_menu_tools{
+    width: 50px;
+    height: 100%;
+    margin-top: 350px;
+    text-align: center;
+}
+
+.start_menu_tools i{
+    width: 45px;
+}
+
+.windows_bar{
+    width: 100%;
+    height: 50px;
+    background-color: #2f2f2f;
+    position: fixed;
+    bottom: 0;
+}
+
+.windows_button{
+    width: 60px;
+    padding-left: 10px;
+}
+
+.windows_button:hover .fa-windows{
+    color: dodgerblue;
+}
+
+.fa-lg{
+    font-size: 2em;
+}
+
+.fa-md{
+    font-size: 1.5em;
+}
+
+.fa{
+    line-height: 50px;
+    color: white;
+    transition: all .5s;
+}
+
+.text-white{
+    color: white;
+}
+
+.windows_textbox{
+    -webkit-appearance: none;
+    height: 60px;
+    width: 300px;
+    border: 0;
+    outline: none;
+    background: rgba(60, 60, 60, 0.89);
+    color: white;
+    padding-bottom: 10px;
+}
+
+.bar_time{
+    width: 80px;
+    height: 50px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.bar_time span{
+    font-size: 0.8em;
+    line-height: 25px;
+}

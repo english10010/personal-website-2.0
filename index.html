@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/2017022711575780_easyicon_net_16.ico">
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="angular-1.5.5/angular.min.js"></script>
+    <script src="angular-1.5.5/angular-route.min.js"></script>
+    <title>Leo</title>
+</head>
+<body ng-app="persoanlApp">
+<div class="window_container container">
+    <div class="row" ng-controller="windowController">
+        <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4 shortcut" ng-repeat="short in shortcuts" >
+            <div class="shortcut_hover">
+                <img src="{{short.imgUrl}}" ng-dblclick="shortcut_active($event)">
+                <span>{{short.text}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="start_menu">
+    <div class="start_menu_container">
+        <div class="start_menu_tools">
+            <i class="fa fa-user fa-md"></i>
+            <i class="fa fa-cog fa-md"></i>
+            <i class="fa fa-times-circle fa-md"></i>
+        </div>
+    </div>
+</div>
+<footer class="windows_bar" ng-controller="barController">
+    <div title="Start" class="windows_button pull-left" data-toggle="tooltip" data-placement="top" id="start">
+        <i class="fa fa-windows fa-lg"></i>
+    </div>
+    <input type="text" class="windows_textbox pull-left" placeholder="search for something"/>
+    <div title="Resume" class="windows_button pull-left" data-toggle="tooltip" data-placement="top">
+        <i class="fa fa-address-card fa-lg"></i>
+    </div>
+    <div class="pull-right bar_time">
+        <span class="text-white">{{time}}</span>
+        <span class="text-white">{{date}}</span>
+    </div>
+
+</footer>
+<script src="js/index.js"></script>
+<script src="js/angular/index.js"></script>
+</body>
+</html>
