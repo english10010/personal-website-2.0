@@ -1,8 +1,8 @@
 var $loading = $('#loading');
 $loading.height($(window).height());
-setTimeout(function () {
+/*setTimeout(function () {
     $loading.fadeOut();
-}, 3000);
+}, 3000);*/
 
 $('[data-toggle="tooltip"]').tooltip();
 
